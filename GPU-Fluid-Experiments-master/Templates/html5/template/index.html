@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>::APP_TITLE::</title>
+	<style>
+		html,body,#content {background:#000; margin: 0; padding: 0; height: 100%; overflow: hidden; }
+	</style>
+</head>
+<body>
+	<div id="content">
+		<iframe height="100%" width="100%" src="iframe.html" id="iframe"></iframe>
+	</div>
+
+	<script>
+		function toggleFullScreen() {
+		  if (!document.fullscreenElement &&    // alternative standard method
+		      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+		    if (document.documentElement.requestFullscreen) {
+		      document.documentElement.requestFullscreen();
+		    } else if (document.documentElement.msRequestFullscreen) {
+		      document.documentElement.msRequestFullscreen();
+		    } else if (document.documentElement.mozRequestFullScreen) {
+		      document.documentElement.mozRequestFullScreen();
+		    } else if (document.documentElement.webkitRequestFullscreen) {
+		      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		    }
+		  } else {
+		    if (document.exitFullscreen) {
+		      document.exitFullscreen();
+		    } else if (document.msExitFullscreen) {
+		      document.msExitFullscreen();
+		    } else if (document.mozCancelFullScreen) {
+		      document.mozCancelFullScreen();
+		    } else if (document.webkitExitFullscreen) {
+		      document.webkitExitFullscreen();
+		    }
+		  }
+		}
+		document.addEventListener("keydown", function(e) {
+		  if(e.keyCode == 70) { // letter F
+		    toggleFullScreen();
+		  }else if(e.keyCode == 82) { // letter R
+		    document.getElementById('iframe').src = document.getElementById('iframe').src;
+		  }
+		}, false);
+	</script>
+</body>
+</html>
