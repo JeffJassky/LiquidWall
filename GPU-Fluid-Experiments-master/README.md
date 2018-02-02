@@ -1,22 +1,22 @@
-#Cross-platform GPU fluid simulation
+# Cross-platform GPU fluid simulation
 ----
 Experimenting coupling a CPU-based rigid body simulation with a GPU-based fluid simulation in OpenGL ES. 
 
-###[Demo](http://haxiomic.github.io/GPU-Fluid-Experiments/html5/)
+### [Demo](http://haxiomic.github.io/GPU-Fluid-Experiments/html5/)
 
 (Rigid body integration is still in the works)
 
-####Todo
+#### Todo
 - Switch to MAC (staggerd) grid
 - Establish efficient pipeline for reading forces to CPU (via glReadPixels)
 
-####Requires:
+#### Requires:
 - [Haxe](http://haxe.org/)
 - [lime](https://github.com/openfl/lime/) ♥
 - [gltoolbox](http://github.com/haxiomic/gltoolbox)
 - [my fork of shaderblox](http://github.com/haxiomic/shaderblox) (by [Sunjammer](https://github.com/Sunjammer))
 
-####Building
+#### Building
 Install [haxe](http://haxe.org/), then install the build tool **aether** from haxelib\*
 
 ```haxelib install aether```
